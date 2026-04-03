@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Real Estate Agents | Work Smarter, Close More Deals</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #0f0f0f;
+            color: #f5f5f5;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+        
+        .logo span {
+            color: #00d4aa;
+        }
+        
+        .logo a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .tagline {
+            color: #888;
+            font-size: 1.1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            color: #999;
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .nav {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .nav a {
+            color: #888;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.95rem;
+        }
+        
+        .nav a:hover {
+            color: #00d4aa;
+        }
+        
+        .pain-points {
+            background: #1a1a1a;
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        
+        .pain-points h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .pain-item {
+            background: #0f0f0f;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 3px solid #ff6b6b;
+        }
+        
+        .pain-item h4 {
+            color: #ff6b6b;
+            margin-bottom: 8px;
+        }
+        
+        .pain-item p {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        .solution {
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .solution h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .solution p {
+            color: #888;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, #00d4aa 0%, #00a080 100%);
+            border-radius: 16px;
+            padding: 50px 40px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .cta-box h2 {
+            color: #0f0f0f;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .cta-box p {
+            color: #0f0f0f;
+            opacity: 0.8;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        
+        .cta-box .price {
+            color: #0f0f0f;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        
+        .cta-box .btn {
+            display: inline-block;
+            padding: 18px 50px;
+            background: #0f0f0f;
+            color: #00d4aa;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+        
+        .cta-box .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .features {
+            margin: 50px 0;
+        }
+        
+        .features h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .feature-card {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .feature-card .icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card h4 {
+            margin-bottom: 10px;
+            color: #00d4aa;
+        }
+        
+        .feature-card p {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        .comparison {
+            margin: 50px 0;
+        }
+        
+        .comparison h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .comp-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .comp-table th,
+        .comp-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #2a2a2a;
+        }
+        
+        .comp-table th {
+            color: #888;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .comp-table .check {
+            color: #00d4aa;
+        }
+        
+        .comp-table .x {
+            color: #ff6b6b;
+        }
+        
+        .testimonial {
+            background: #1a1a1a;
+            border-radius: 16px;
+            padding: 40px;
+            margin: 50px 0;
+            text-align: center;
+        }
+        
+        .testimonial p {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial .author {
+            color: #00d4aa;
+            font-weight: 600;
+        }
+        
+        .faq {
+            margin: 50px 0;
+        }
+        
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        
+        .faq-item h4 {
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        .faq-item p {
+            color: #888;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #555;
+            font-size: 0.85rem;
+        }
+        
+        footer a {
+            color: #00d4aa;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"><a href="index.html">Insight<span>Engine</span></a></div>
+            <p class="tagline">AI for Real Estate Professionals</p>
+        </header>
+        
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="https://forms.gle/ZKmU18cBHz7Yihux9">Get Started</a>
+        </nav>
+        
+        <div class="hero" style="text-align: center;">
+            <h1>Your AI Assistant for Real Estate</h1>
+            <p>Market research, content creation, lead insights — all handled by AI. You close deals, we handle the research.</p>
+        </div>
+        
+        <div class="pain-points">
+            <h2>Stop Wasting Hours on Research</h2>
+            <div class="grid-2">
+                <div class="pain-item">
+                    <h4>Spending hours researching neighborhoods</h4>
+                    <p>Every minute digging through data is a minute not showing houses or closing deals.</p>
+                </div>
+                <div class="pain-item">
+                    <h4>Struggling to create consistent content</h4>
+                    <p>Blog posts, social media, email campaigns — it takes forever and feels like a chore.</p>
+                </div>
+                <div class="pain-item">
+                    <h4>Missing market opportunities</h4>
+                    <p>Trends shift fast. Keeping up is hard when you're busy with clients.</p>
+                </div>
+                <div class="pain-item">
+                    <h4>Paying for tools you don't use</h4>
+                    <p>CRM, market data, content tools — another subscription, another thing to learn.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="solution">
+            <h2>Your Personal AI Research & Content Agent</h2>
+            <p>A customized AI assistant trained on real estate. Handles market research, content creation, and lead insights — so you can focus on selling.</p>
+        </div>
+        
+        <div class="features">
+            <h2>What Your AI Agent Does</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">🏠</div>
+                    <h4>Market Research</h4>
+                    <p>Neighborhood comparisons, pricing trends, market stats — get answers in minutes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">✍️</div>
+                    <h4>Content Creation</h4>
+                    <p>Blog posts, listing descriptions, social content, email campaigns — written for you.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🔍</div>
+                    <h4>Lead Insights</h4>
+                    <p>Research prospects, analyze properties, prepare for conversations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📊</div>
+                    <h4>Competitor Analysis</h4>
+                    <p>Know what other agents in your area are doing. Find your edge.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📝</div>
+                    <h4>Property Docs</h4>
+                    <p>Draft property descriptions, marketing copy, and listing highlights.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💡</div>
+                    <h4>Strategy Tips</h4>
+                    <p>Get advice on pricing, staging, marketing — backed by data.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-box">
+            <h2>Get Your AI Real Estate Agent</h2>
+            <p>Custom-configured. Trained on your market. Ready to work.</p>
+            <div class="price">$297</div>
+            <a href="https://forms.gle/ZKmU18cBHz7Yihux9" class="btn">Set Up My AI Agent →</a>
+        </div>
+        
+        <div class="comparison">
+            <h2>Before vs. After</h2>
+            <table class="comp-table">
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Without AI</th>
+                        <th>With Your AI Agent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Research a neighborhood</td>
+                        <td>1-2 hours</td>
+                        <td class="check">✓ 5 minutes</td>
+                    </tr>
+                    <tr>
+                        <td>Write a blog post</td>
+                        <td>2-3 hours</td>
+                        <td class="check">✓ 15 minutes</td>
+                    </tr>
+                    <tr>
+                        <td>Prepare for a listing meeting</td>
+                        <td>1 hour</td>
+                        <td class="check">✓ 10 minutes</td>
+                    </tr>
+                    <tr>
+                        <td>Create social content for the week</td>
+                        <td>3+ hours</td>
+                        <td class="check">✓ 30 minutes</td>
+                    </tr>
+                    <tr>
+                        <td>Monthly market report</td>
+                        <td>5+ hours</td>
+                        <td class="check">✓ 1 hour</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="testimonial">
+            <p>"I used to spend weekends researching neighborhoods. Now I ask my AI and have answers in minutes. It's like having a research assistant that never sleeps."</p>
+            <div class="author">— Real Estate Agent, 5 years experience</div>
+        </div>
+        
+        <div class="faq">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h4>How does this work?</h4>
+                <p>After you sign up, we'll configure an AI agent specifically for real estate. You'll get login access and a personalized setup call (Loom video) showing you how to use it.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>Do I need any technical skills?</h4>
+                <p>Nope. If you can use email, you can use this. We'll walk you through everything.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>What if I need help?</h4>
+                <p>Email support is included. For urgent issues, we respond within 24 hours.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>Can I cancel anytime?</h4>
+                <p>The one-time setup fee is a one-time purchase. If you want ongoing support, it's $97/month, cancel anytime.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Questions? Email us at <a href="mailto:hello@insightengine.ai">hello@insightengine.ai</a></p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Insight Engine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: #0f0f0f;
+            color: #f5f5f5;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+        
+        .logo span {
+            color: #00d4aa;
+        }
+        
+        .logo a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .tagline {
+            color: #888;
+            font-size: 1.1rem;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            color: #888;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .price-card {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        
+        .price-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .price-card.featured {
+            border-color: #00d4aa;
+            position: relative;
+        }
+        
+        .price-card.featured::before {
+            content: "MOST POPULAR";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #00d4aa;
+            color: #0f0f0f;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+        
+        .price-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .price-card .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .price-card .price span {
+            font-size: 1rem;
+            color: #888;
+            font-weight: 400;
+        }
+        
+        .price-card .desc {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+        
+        .price-card ul {
+            text-align: left;
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .price-card li {
+            padding: 8px 0;
+            color: #ccc;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .price-card li::before {
+            content: "✓";
+            color: #00d4aa;
+            font-weight: bold;
+        }
+        
+        .price-card .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: #2a2a2a;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        
+        .price-card .btn:hover {
+            background: #3a3a3a;
+        }
+        
+        .price-card.featured .btn {
+            background: #00d4aa;
+            color: #0f0f0f;
+        }
+        
+        .price-card.featured .btn:hover {
+            background: #00e6bb;
+        }
+        
+        .addons {
+            background: #1a1a1a;
+            border-radius: 16px;
+            padding: 40px;
+            margin-top: 50px;
+        }
+        
+        .addons h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .addons-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .addon-item {
+            background: #0f0f0f;
+            padding: 25px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .addon-item h4 {
+            color: #00d4aa;
+            margin-bottom: 5px;
+        }
+        
+        .addon-item p {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        .addon-item .price {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .faq {
+            margin-top: 50px;
+        }
+        
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        
+        .faq-item h4 {
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        
+        .faq-item p {
+            color: #888;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #555;
+            font-size: 0.85rem;
+        }
+        
+        footer a {
+            color: #00d4aa;
+            text-decoration: none;
+        }
+        
+        .nav {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .nav a {
+            color: #888;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.95rem;
+        }
+        
+        .nav a:hover {
+            color: #00d4aa;
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto 50px;
+            }
+            
+            .addons-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"><a href="index.html">Insight<span>Engine</span></a></div>
+            <p class="tagline">AI-powered research & analysis for founders, marketers & creators</p>
+        </header>
+        
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="https://forms.gle/ZKmU18cBHz7Yihux9">Get Started</a>
+        </nav>
+        
+        <div style="text-align: center;">
+            <h1>Simple, Transparent Pricing</h1>
+            <p class="subtitle">Choose the depth that fits your needs. No hidden fees.</p>
+        </div>
+        
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Quick Scan</h3>
+                <div class="price">$147</div>
+                <p class="desc">For when you need fast answers</p>
+                <ul>
+                    <li>2-3 page research brief</li>
+                    <li>Key findings overview</li>
+                    <li>Top 3-5 insights</li>
+                    <li>48 hour turnaround</li>
+                    <li>Email delivery</li>
+                </ul>
+                <a href="https://forms.gle/ZKmU18cBHz7Yihux9" class="btn">Get Quick Scan</a>
+            </div>
+            
+            <div class="price-card featured">
+                <h3>Deep Dive</h3>
+                <div class="price">$297</div>
+                <p class="desc">For strategic decisions</p>
+                <ul>
+                    <li>5-8 page comprehensive report</li>
+                    <li>Full landscape mapping</li>
+                    <li>Competitive breakdown</li>
+                    <li>Opportunities & risks</li>
+                    <li>Strategic recommendations</li>
+                    <li>30 min follow-up call</li>
+                    <li>72 hour turnaround</li>
+                </ul>
+                <a href="https://forms.gle/ZKmU18cBHz7Yihux9" class="btn">Get Deep Dive</a>
+            </div>
+            
+            <div class="price-card">
+                <h3>Ongoing</h3>
+                <div class="price">$497<span>/mo</span></div>
+                <p class="desc">For serious operators</p>
+                <ul>
+                    <li>2 research requests/mo</li>
+                    <li>Priority turnaround (24hr)</li>
+                    <li>Deep Dive tier included</li>
+                    <li>Dedicated Slack channel</li>
+                    <li>Monthly strategy call</li>
+                    <li>Unlimited revisions</li>
+                </ul>
+                <a href="https://forms.gle/ZKmU18cBHz7Yihux9" class="btn">Get Ongoing</a>
+            </div>
+        </div>
+        
+        <div class="addons">
+            <h2>Add-Ons</h2>
+            <div class="addons-grid">
+                <div class="addon-item">
+                    <div>
+                        <h4>Rush Delivery</h4>
+                        <p>Get your results in 24 hours instead of 48</p>
+                    </div>
+                    <div class="price">+$97</div>
+                </div>
+                <div class="addon-item">
+                    <div>
+                        <h4>Loom Video Walkthrough</h4>
+                        <p>5-10 min video explaining key findings</p>
+                    </div>
+                    <div class="price">+$47</div>
+                </div>
+                <div class="addon-item">
+                    <div>
+                        <h4>Data Export</h4>
+                        <p>Raw data in spreadsheet format</p>
+                    </div>
+                    <div class="price">+$67</div>
+                </div>
+                <div class="addon-item">
+                    <div>
+                        <h4>Follow-Up Call</h4>
+                        <p>30 min call to discuss findings</p>
+                    </div>
+                    <div class="price">+$97</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h4>How does the research process work?</h4>
+                <p>After you submit your request, we dig through sources, analyze the data, and compile actionable insights. You'll receive a structured document delivered to your email.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>Can I change my request after submitting?</h4>
+                <p>Yes! Before we start processing, you can modify your scope. Once research begins, changes may incur additional fees depending on the work done.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>What's your refund policy?</h4>
+                <p>If you're not satisfied with the deliverable, we'll revise once for free. Refunds are considered case-by-case before work begins.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>Do you offer refunds?</h4>
+                <p>We stand behind our work. If the deliverable doesn't meet your expectations, we'll revise once at no charge. Full refunds are available before research begins.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Questions? Email us at <a href="mailto:hello@insightengine.ai">hello@insightengine.ai</a></p>
+        </footer>
+    </div>
+</body>
+</html>

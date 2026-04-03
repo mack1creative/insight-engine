@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Coaches & Consultants | Work Smarter, Serve More Clients</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; background: #0f0f0f; color: #f5f5f5; line-height: 1.6; min-height: 100vh; }
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+        header { text-align: center; margin-bottom: 50px; }
+        .logo { font-size: 2.5rem; font-weight: 700; letter-spacing: -1px; margin-bottom: 10px; }
+        .logo span { color: #00d4aa; }
+        .logo a { color: inherit; text-decoration: none; }
+        .tagline { color: #888; font-size: 1.1rem; }
+        h1 { font-size: 2.5rem; margin-bottom: 20px; line-height: 1.2; }
+        .hero p { color: #999; font-size: 1.15rem; max-width: 600px; margin: 0 auto; }
+        .nav { text-align: center; margin-bottom: 30px; }
+        .nav a { color: #888; text-decoration: none; margin: 0 15px; font-size: 0.95rem; }
+        .nav a:hover { color: #00d4aa; }
+        
+        .pain-points { background: #1a1a1a; border-radius: 16px; padding: 40px; margin: 40px 0; }
+        .pain-points h2 { text-align: center; margin-bottom: 30px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .pain-item { background: #0f0f0f; padding: 20px; border-radius: 12px; border-left: 3px solid #ff6b6b; }
+        .pain-item h4 { color: #ff6b6b; margin-bottom: 8px; }
+        .pain-item p { color: #888; font-size: 0.9rem; }
+        
+        .features { margin: 50px 0; }
+        .features h2 { text-align: center; margin-bottom: 40px; }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .feature-card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 25px; text-align: center; }
+        .feature-card .icon { font-size: 2rem; margin-bottom: 15px; }
+        .feature-card h4 { margin-bottom: 10px; color: #00d4aa; }
+        .feature-card p { color: #888; font-size: 0.9rem; }
+        
+        .cta-box { background: linear-gradient(135deg, #00d4aa 0%, #00a080 100%); border-radius: 16px; padding: 50px 40px; text-align: center; margin: 40px 0; }
+        .cta-box h2 { color: #0f0f0f; font-size: 2rem; margin-bottom: 10px; }
+        .cta-box p { color: #0f0f0f; opacity: 0.8; font-size: 1.1rem; margin-bottom: 30px; }
+        .cta-box .price { color: #0f0f0f; font-size: 2.5rem; font-weight: 700; margin-bottom: 25px; }
+        .cta-box .btn { display: inline-block; padding: 18px 50px; background: #0f0f0f; color: #00d4aa; font-size: 1.1rem; font-weight: 600; border: none; border-radius: 8px; text-decoration: none; }
+        
+        .comparison { margin: 50px 0; }
+        .comparison h2 { text-align: center; margin-bottom: 30px; }
+        .comp-table { width: 100%; border-collapse: collapse; }
+        .comp-table th, .comp-table td { padding: 15px; text-align: left; border-bottom: 1px solid #2a2a2a; }
+        .comp-table th { color: #888; font-weight: 500; font-size: 0.9rem; }
+        .comp-table .check { color: #00d4aa; }
+        
+        .faq { margin: 50px 0; }
+        .faq h2 { text-align: center; margin-bottom: 30px; }
+        .faq-item { margin-bottom: 20px; }
+        .faq-item h4 { margin-bottom: 10px; color: #fff; }
+        .faq-item p { color: #888; }
+        
+        footer { text-align: center; margin-top: 60px; color: #555; font-size: 0.85rem; }
+        footer a { color: #00d4aa; text-decoration: none; }
+        
+        @media (max-width: 768px) { .grid-2, .features-grid { grid-template-columns: 1fr; } h1 { font-size: 1.8rem; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"><a href="index.html">Insight<span>Engine</span></a></div>
+            <p class="tagline">AI for Coaches & Consultants</p>
+        </header>
+        <nav class="nav">
+            <a href="index.html">Home</a> | <a href="pricing.html">Pricing</a> | <a href="real-estate.html">Real Estate</a> | <a href="https://forms.gle/ZKmU18cBHz7Yihux9">Get Started</a>
+        </nav>
+        
+        <div class="hero" style="text-align: center;">
+            <h1>Your AI Assistant for Coaching Business</h1>
+            <p>Client research, content creation, session prep — all handled by AI. You focus on coaching, we handle the rest.</p>
+        </div>
+        
+        <div class="pain-points">
+            <h2>Stop Drowning in Admin Work</h2>
+            <div class="grid-2">
+                <div class="pain-item"><h4>Spending hours on client research</h4><p>Before every session, you research their industry, challenges, goals.</p></div>
+                <div class="pain-item"><h4>Struggling to create content</h4><p>Blog posts, newsletters, social media — it takes forever.</p></div>
+                <div class="pain-item"><h4>No time for business development</h4><p>You're too busy with clients to find new ones.</p></div>
+                <div class="pain-item"><h4>Reinventing the wheel</h4><p>Creating frameworks, worksheets, and materials from scratch each time.</p></div>
+            </div>
+        </div>
+        
+        <div class="features">
+            <h2>What Your AI Agent Does</h2>
+            <div class="features-grid">
+                <div class="feature-card"><div class="icon">🔍</div><h4>Client Research</h4><p>Research prospects, prepare session insights, understand their industry.</p></div>
+                <div class="feature-card"><div class="icon">✍️</div><h4>Content Creation</h4><p>Blog posts, newsletters, social content written in your voice.</p></div>
+                <div class="feature-card"><div class="icon">📋</div><h4>Session Prep</h4><p>Draft frameworks, worksheets, conversation guides.</p></div>
+                <div class="feature-card"><div class="icon">📊</div><h4>Lead Insights</h4><p>Research prospects, find decision-makers, prepare outreach.</p></div>
+                <div class="feature-card"><div class="icon">📝</div><h4>Program Materials</h4><p>Create courses, PDFs, and resources for your programs.</p></div>
+                <div class="feature-card"><div class="icon">💡</div><h4>Business Strategy</h4><p>Get advice on pricing, positioning, offers backed by data.</p></div>
+            </div>
+        </div>
+        
+        <div class="cta-box">
+            <h2>Get Your AI Coaching Assistant</h2>
+            <p>Custom-configured for your niche. Trained on your methodology.</p>
+            <div class="price">$297</div>
+            <a href="https://forms.gle/ZKmU18cBHz7Yihux9" class="btn">Set Up My AI Agent →</a>
+        </div>
+        
+        <div class="comparison">
+            <h2>Before vs. After</h2>
+            <table class="comp-table">
+                <tr><th>Task</th><th>Without AI</th><th>With Your AI Agent</th></tr>
+                <tr><td>Research a new prospect</td><td>1 hour</td><td class="check">✓ 5 minutes</td></tr>
+                <tr><td>Write a weekly newsletter</td><td>2 hours</td><td class="check">✓ 15 minutes</td></tr>
+                <tr><td>Prepare for coaching session</td><td>30 min</td><td class="check">✓ 5 minutes</td></tr>
+                <tr><td>Create program materials</td><td>5+ hours</td><td class="check">✓ 1 hour</td></tr>
+            </table>
+        </div>
+        
+        <div class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item"><h4>How does this work?</h4><p>We configure an AI agent trained on coaching best practices. You'll get login access and a Loom walkthrough.</p></div>
+            <div class="faq-item"><h4>Do I need technical skills?</h4><p>Not at all. If you can use email, you can use this.</p></div>
+            <div class="faq-item"><h4>Can I cancel anytime?</h4><p>The $297 is one-time. Optional $97/mo for ongoing support, cancel anytime.</p></div>
+        </div>
+        
+        <footer><p>Questions? Email us at <a href="mailto:hello@insightengine.ai">hello@insightengine.ai</a></p></footer>
+    </div>
+</body>
+</html>

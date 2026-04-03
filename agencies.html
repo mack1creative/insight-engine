@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Marketing Agencies | Scale Your Agency with Less Headcount</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; background: #0f0f0f; color: #f5f5f5; line-height: 1.6; min-height: 100vh; }
+        .container { max-width: 900px; margin: 0 auto; padding: 60px 20px; }
+        header { text-align: center; margin-bottom: 50px; }
+        .logo { font-size: 2.5rem; font-weight: 700; letter-spacing: -1px; margin-bottom: 10px; }
+        .logo span { color: #00d4aa; }
+        .logo a { color: inherit; text-decoration: none; }
+        .tagline { color: #888; font-size: 1.1rem; }
+        h1 { font-size: 2.5rem; margin-bottom: 20px; line-height: 1.2; }
+        .hero p { color: #999; font-size: 1.15rem; max-width: 600px; margin: 0 auto; }
+        .nav { text-align: center; margin-bottom: 30px; }
+        .nav a { color: #888; text-decoration: none; margin: 0 15px; font-size: 0.95rem; }
+        .nav a:hover { color: #00d4aa; }
+        
+        .pain-points { background: #1a1a1a; border-radius: 16px; padding: 40px; margin: 40px 0; }
+        .pain-points h2 { text-align: center; margin-bottom: 30px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .pain-item { background: #0f0f0f; padding: 20px; border-radius: 12px; border-left: 3px solid #ff6b6b; }
+        .pain-item h4 { color: #ff6b6b; margin-bottom: 8px; }
+        .pain-item p { color: #888; font-size: 0.9rem; }
+        
+        .features { margin: 50px 0; }
+        .features h2 { text-align: center; margin-bottom: 40px; }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .feature-card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 25px; text-align: center; }
+        .feature-card .icon { font-size: 2rem; margin-bottom: 15px; }
+        .feature-card h4 { margin-bottom: 10px; color: #00d4aa; }
+        .feature-card p { color: #888; font-size: 0.9rem; }
+        
+        .cta-box { background: linear-gradient(135deg, #00d4aa 0%, #00a080 100%); border-radius: 16px; padding: 50px 40px; text-align: center; margin: 40px 0; }
+        .cta-box h2 { color: #0f0f0f; font-size: 2rem; margin-bottom: 10px; }
+        .cta-box p { color: #0f0f0f; opacity: 0.8; font-size: 1.1rem; margin-bottom: 30px; }
+        .cta-box .price { color: #0f0f0f; font-size: 2.5rem; font-weight: 700; margin-bottom: 25px; }
+        .cta-box .btn { display: inline-block; padding: 18px 50px; background: #0f0f0f; color: #00d4aa; font-size: 1.1rem; font-weight: 600; border: none; border-radius: 8px; text-decoration: none; }
+        
+        .comparison { margin: 50px 0; }
+        .comparison h2 { text-align: center; margin-bottom: 30px; }
+        .comp-table { width: 100%; border-collapse: collapse; }
+        .comp-table th, .comp-table td { padding: 15px; text-align: left; border-bottom: 1px solid #2a2a2a; }
+        .comp-table th { color: #888; font-weight: 500; font-size: 0.9rem; }
+        .comp-table .check { color: #00d4aa; }
+        
+        .faq { margin: 50px 0; }
+        .faq h2 { text-align: center; margin-bottom: 30px; }
+        .faq-item { margin-bottom: 20px; }
+        .faq-item h4 { margin-bottom: 10px; color: #fff; }
+        .faq-item p { color: #888; }
+        
+        .tiers { margin: 50px 0; }
+        .tiers h2 { text-align: center; margin-bottom: 30px; }
+        .tiers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .tier-card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 30px; text-align: center; }
+        .tier-card h3 { color: #00d4aa; margin-bottom: 10px; }
+        .tier-card .price { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
+        .tier-card ul { text-align: left; list-style: none; margin-top: 20px; }
+        .tier-card li { padding: 8px 0; color: #ccc; font-size: 0.9rem; }
+        .tier-card li::before { content: "✓ "; color: #00d4aa; }
+        
+        footer { text-align: center; margin-top: 60px; color: #555; font-size: 0.85rem; }
+        footer a { color: #00d4aa; text-decoration: none; }
+        
+        @media (max-width: 768px) { .grid-2, .features-grid, .tiers-grid { grid-template-columns: 1fr; } h1 { font-size: 1.8rem; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"><a href="index.html">Insight<span>Engine</span></a></div>
+            <p class="tagline">AI for Marketing Agencies</p>
+        </header>
+        <nav class="nav">
+            <a href="index.html">Home</a> | <a href="pricing.html">Pricing</a> | <a href="real-estate.html">Real Estate</a> | <a href="https://forms.gle/ZKmU18cBHz7Yihux9">Get Started</a>
+        </nav>
+        
+        <div class="hero" style="text-align: center;">
+            <h1>Your AI Powerhouse for Agency Work</h1>
+            <p>Research, content, analytics — handled by AI. Deliver more work without adding headcount.</p>
+        </div>
+        
+        <div class="pain-points">
+            <h2>Stop Burning Out Your Team</h2>
+            <div class="grid-2">
+                <div class="pain-item"><h4>Too many client requests</h4><p>Research, content, reports — it never ends and your team is drowning.</p></div>
+                <div class="pain-item"><h4>Can't hire fast enough</h4><p>Good talent is expensive and hard to find.</p></div>
+                <div class="pain-item"><h4>Content takes forever</h4><p>Every blog post, social campaign, and email takes hours.</p></div>
+                <div class="pain-item"><h4>Margin erosion</h4><p>Billing hourly on research work eats your profits.</p></div>
+            </div>
+        </div>
+        
+        <div class="features">
+            <h2>What Your AI Agent Does</h2>
+            <div class="features-grid">
+                <div class="feature-card"><div class="icon">🔍</div><h4>Client Research</h4><p>Research client industries, competitors, audiences.</p></div>
+                <div class="feature-card"><div class="icon">✍️</div><h4>Content Creation</h4><p>Blogs, social posts, emails, ad copy for any client.</p></div>
+                <div class="feature-card"><div class="icon">📊</div><h4>Analytics Reports</h4><p>Summarize data, generate insights, create reports.</p></div>
+                <div class="feature-card"><div class="icon">🎯</div><h4>Keyword Research</h4><p>SEO research, content gaps, keyword opportunities.</p></div>
+                <div class="feature-card"><div class="icon">📝</div><h4>Campaign Drafts</h4><p>Draft campaigns, ad variations, email sequences.</p></div>
+                <div class="feature-card"><div class="icon">💡</div><h4>Strategy Docs</h4><p>Create proposals, strategies, recommendations.</p></div>
+            </div>
+        </div>
+        
+        <div class="tiers">
+            <h2>Packages for Agencies</h2>
+            <div class="tiers-grid">
+                <div class="tier-card">
+                    <h3>Solo</h3>
+                    <div class="price">$297</div>
+                    <p>For solo consultants & small shops</p>
+                    <ul>
+                        <li>1 AI agent</li>
+                        <li>Basic configuration</li>
+                        <li>Email support</li>
+                        <li>10 requests/mo</li>
+                    </ul>
+                </div>
+                <div class="tier-card">
+                    <h3>Team</h3>
+                    <div class="price">$497</div>
+                    <p>For growing agencies</p>
+                    <ul>
+                        <li>3 AI agents</li>
+                        <li>Custom workflows</li>
+                        <li>Priority support</li>
+                        <li>Unlimited requests</li>
+                    </ul>
+                </div>
+                <div class="tier-card">
+                    <h3>Agency</h3>
+                    <div class="price">$997</div>
+                    <p>For full-service agencies</p>
+                    <ul>
+                        <li>5+ AI agents</li>
+                        <li>Multiple client setups</li>
+                        <li>Dedicated channel</li>
+                        <li>API access</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-box">
+            <h2>Get Your AI Agency Agent</h2>
+            <p>Custom-configured for your client mix. Trained on your processes.</p>
+            <div class="price">From $297</div>
+            <a href="https://forms.gle/ZKmU18cBHz7Yihux9" class="btn">Set Up My AI Agent →</a>
+        </div>
+        
+        <div class="comparison">
+            <h2>Before vs. After</h2>
+            <table class="comp-table">
+                <tr><th>Task</th><th>Without AI</th><th>With Your AI Agent</th></tr>
+                <tr><td>Research a new client industry</td><td>4-6 hours</td><td class="check">✓ 20 minutes</td></tr>
+                <tr><td>Write a blog post</td><td>3 hours</td><td class="check">✓ 15 minutes</td></tr>
+                <tr><td>Create monthly report</td><td>5 hours</td><td class="check">✓ 30 minutes</td></tr>
+                <tr><td>Keyword research</td><td>2 hours</td><td class="check">✓ 10 minutes</td></tr>
+            </table>
+        </div>
+        
+        <div class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item"><h4>How does this work?</h4><p>We configure AI agents trained on marketing best practices. Each can handle different client types.</p></div>
+            <div class="faq-item"><h4>Can multiple team members use it?</h4><p>Yes. The Team and Agency tiers support multiple users.</p></div>
+            <div class="faq-item"><h4>Is it secure?</h4><p>Yes. Each client setup is separate. We don't share data between clients.</p></div>
+            <div class="faq-item"><h4>Can I cancel anytime?</h4><p>Base tiers are one-time. Optional monthly support available.</p></div>
+        </div>
+        
+        <footer><p>Questions? Email us at <a href="mailto:hello@insightengine.ai">hello@insightengine.ai</a></p></footer>
+    </div>
+</body>
+</html>

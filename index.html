@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insight Engine | Research & Analysis</title>
+    <title>Insight Engine | AI-Powered Research & Analysis</title>
     <style>
         * {
             margin: 0;
@@ -44,106 +44,70 @@
         .tagline {
             color: #888;
             font-size: 1.1rem;
+            margin-bottom: 30px;
         }
         
-        .form-card {
-            background: #1a1a1a;
-            border-radius: 16px;
-            padding: 40px;
-            border: 1px solid #2a2a2a;
+        .hero {
+            text-align: center;
+            margin-bottom: 50px;
         }
         
-        .section {
-            margin-bottom: 35px;
-        }
-        
-        .section:last-child {
-            margin-bottom: 0;
-        }
-        
-        h2 {
-            font-size: 1.1rem;
+        .hero h1 {
+            font-size: 2rem;
             font-weight: 600;
-            margin-bottom: 20px;
-            color: #fff;
+            margin-bottom: 15px;
+            line-height: 1.3;
         }
         
-        label {
-            display: block;
-            font-size: 0.9rem;
-            color: #aaa;
-            margin-bottom: 8px;
+        .hero p {
+            color: #999;
+            font-size: 1.1rem;
         }
         
-        input[type="text"],
-        input[type="email"],
-        textarea,
-        select {
-            width: 100%;
-            padding: 14px 16px;
-            background: #0f0f0f;
+        .services {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .service-card {
+            background: #1a1a1a;
             border: 1px solid #2a2a2a;
-            border-radius: 8px;
-            color: #f5f5f5;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color 0.2s;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
         }
         
-        input:focus,
-        textarea:focus,
-        select:focus {
-            outline: none;
+        .service-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #00d4aa;
+        }
+        
+        .service-card p {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        .service-card.premium {
             border-color: #00d4aa;
         }
         
-        textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-        
-        .checkbox-group {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            cursor: pointer;
-        }
-        
-        .checkbox-item input {
-            width: 20px;
-            height: 20px;
-            accent-color: #00d4aa;
-            cursor: pointer;
-        }
-        
-        .checkbox-item span {
-            color: #ccc;
-            font-size: 0.95rem;
-        }
-        
-        .divider {
-            height: 1px;
-            background: #2a2a2a;
-            margin: 30px 0;
+        .cta {
+            text-align: center;
         }
         
         .btn {
             display: inline-block;
-            width: 100%;
-            padding: 18px;
+            padding: 18px 40px;
             background: #00d4aa;
             color: #0f0f0f;
             font-size: 1.1rem;
             font-weight: 600;
             border: none;
             border-radius: 8px;
-            cursor: pointer;
+            text-decoration: none;
             transition: transform 0.2s, background 0.2s;
         }
         
@@ -152,9 +116,52 @@
             transform: translateY(-2px);
         }
         
+        .how-it-works {
+            margin-top: 50px;
+            padding: 30px;
+            background: #1a1a1a;
+            border-radius: 12px;
+        }
+        
+        .how-it-works h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+        }
+        
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .step-num {
+            width: 30px;
+            height: 30px;
+            background: #00d4aa;
+            color: #0f0f0f;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+        
+        .step p {
+            color: #aaa;
+        }
+        
         footer {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 60px;
             color: #555;
             font-size: 0.85rem;
         }
@@ -165,16 +172,12 @@
         }
         
         @media (max-width: 600px) {
-            .container {
-                padding: 30px 15px;
+            .services {
+                grid-template-columns: 1fr;
             }
             
-            .form-card {
-                padding: 25px;
-            }
-            
-            .logo {
-                font-size: 2rem;
+            .hero h1 {
+                font-size: 1.6rem;
             }
         }
     </style>
@@ -186,131 +189,47 @@
             <p class="tagline">AI-powered research & analysis for founders, marketers & creators</p>
         </header>
         
-        <div class="form-card">
-            <form id="intakeForm">
-                <div class="section">
-                    <h2>1. Research Topic</h2>
-                    <label>What do you need researched?</label>
-                    <textarea name="researchTopic" placeholder="Be as specific as possible. E.g., 'Competitor analysis on AI note-taking apps' or 'Market trends in sustainable packaging for cosmetics'"></textarea>
+        <div class="hero">
+            <h1>Get answers in hours, not weeks.</h1>
+            <p>Market research. Competitor analysis. Lead discovery. We do the digging so you can make better decisions.</p>
+        </div>
+        
+        <div class="services">
+            <div class="service-card">
+                <h3>Quick Scan</h3>
+                <p>Surface-level overview with key findings and top insights. 2-3 pages. 48hr turnaround.</p>
+            </div>
+            <div class="service-card premium">
+                <h3>Deep Dive</h3>
+                <p>Full landscape mapping, competitive breakdown, strategic recommendations. 5-8 pages.</p>
+            </div>
+        </div>
+        
+        <div class="cta">
+            <a href="https://forms.gle/ZKmU18cBHz7Yihux9" class="btn">Start Your Insight Scan →</a>
+        </div>
+        
+        <div class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <p><strong>Submit request</strong> — Tell us what you need researched via our intake form</p>
                 </div>
-                
-                <div class="section">
-                    <h2>2. Goal & Context</h2>
-                    <label>What's the main question you're trying to answer?</label>
-                    <textarea name="goal" placeholder="What decision are you trying to make? What problem are you solving?"></textarea>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <p><strong>We research</strong> — Our AI digs through the data and compiles actionable insights</p>
                 </div>
-                
-                <div class="section">
-                    <h2>3. Scope & Focus</h2>
-                    <label>Specific companies, products, or keywords to include</label>
-                    <input type="text" name="focus" placeholder="List competitors, tools, or search terms">
-                    
-                    <label style="margin-top: 15px;">Geographic scope (if applicable)</label>
-                    <input type="text" name="geography" placeholder="Global, US-only, specific regions, etc.">
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <p><strong>You get results</strong> — Receive a structured report with key findings and next steps</p>
                 </div>
-                
-                <div class="section">
-                    <h2>4. Depth & Format</h2>
-                    <div class="checkbox-group">
-                        <label class="checkbox-item">
-                            <input type="radio" name="depth" value="quick" checked>
-                            <span><strong>Quick Scan</strong> — Surface-level overview (2-3 pages). Key findings at a glance.</span>
-                        </label>
-                        <label class="checkbox-item">
-                            <input type="radio" name="depth" value="deep">
-                            <span><strong>Deep Dive</strong> — Comprehensive analysis (5-8 pages). Full landscape, competitive breakdown, strategic recommendations.</span>
-                        </label>
-                    </div>
-                    
-                    <label style="margin-top: 20px;">Preferred delivery format</label>
-                    <select name="format">
-                        <option value="pdf">PDF Document</option>
-                        <option value="notion">Notion Page</option>
-                        <option value="gdoc">Google Doc</option>
-                    </select>
-                </div>
-                
-                <div class="section">
-                    <h2>5. Timeline</h2>
-                    <select name="timeline">
-                        <option value="24">24 hours (rush) — +50%</option>
-                        <option value="48" selected>48 hours (standard)</option>
-                        <option value="7">5-7 days (flexible)</option>
-                    </select>
-                </div>
-                
-                <div class="section">
-                    <h2>6. Follow-Up</h2>
-                    <div class="checkbox-group">
-                        <label class="checkbox-item">
-                            <input type="radio" name="followup" value="yes">
-                            <span>Yes — 30 min Zoom call to discuss findings</span>
-                        </label>
-                        <label class="checkbox-item">
-                            <input type="radio" name="followup" value="no" checked>
-                            <span>No — written report is enough</span>
-                        </label>
-                    </div>
-                </div>
-                
-                <div class="divider"></div>
-                
-                <div class="section">
-                    <h2>7. Your Info</h2>
-                    <label>Name</label>
-                    <input type="text" name="name" required>
-                    
-                    <label style="margin-top: 15px;">Email</label>
-                    <input type="email" name="email" required>
-                    
-                    <label style="margin-top: 15px;">Company / Project Name</label>
-                    <input type="text" name="company">
-                    
-                    <label style="margin-top: 15px;">How did you hear about us?</label>
-                    <input type="text" name="referral">
-                </div>
-                
-                <button type="submit" class="btn">Submit Request</button>
-            </form>
+            </div>
         </div>
         
         <footer>
             <p>Questions? Email us at <a href="mailto:hello@insightengine.ai">hello@insightengine.ai</a></p>
         </footer>
     </div>
-    
-    <script>
-        document.getElementById('intakeForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Format the submission for display/copy
-            let message = '🎯 New Insight Scan Request\n\n';
-            message += '--- RESEARCH ---\n';
-            message += `Topic: ${data.researchTopic || 'N/A'}\n`;
-            message += `Goal: ${data.goal || 'N/A'}\n`;
-            message += `Focus: ${data.focus || 'N/A'}\n`;
-            message += `Geography: ${data.geography || 'N/A'}\n\n`;
-            message += '--- DELIVERY ---\n';
-            message += `Depth: ${data.depth}\n`;
-            message += `Format: ${data.format}\n`;
-            message += `Timeline: ${data.timeline} hours\n`;
-            message += `Follow-up: ${data.followup}\n\n`;
-            message += '--- CONTACT ---\n';
-            message += `Name: ${data.name}\n`;
-            message += `Email: ${data.email}\n`;
-            message += `Company: ${data.company || 'N/A'}\n`;
-            message += `Referral: ${data.referral || 'N/A'}`;
-            
-            // Copy to clipboard
-            navigator.clipboard.writeText(message).then(() => {
-                alert('Request copied to clipboard! Send it to us to start your Insight Scan.');
-            }).catch(() => {
-                alert('Form submitted! (Email delivery not configured yet)');
-            });
-        });
-    </script>
 </body>
 </html>
